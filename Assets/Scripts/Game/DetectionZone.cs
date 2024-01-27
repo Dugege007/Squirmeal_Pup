@@ -1,13 +1,11 @@
 using UnityEngine;
 using QFramework;
 using UnityEngine.EventSystems;
-using Sirenix.OdinInspector;
 
 namespace SquirmealPup
 {
     public partial class DetectionZone : ViewController, IPointerEnterHandler, IPointerClickHandler
     {
-        [ShowInInspector]
         private bool mMouseEnteredUpper = false;
 
         public void OnPointerClick(PointerEventData eventData)
@@ -23,21 +21,14 @@ namespace SquirmealPup
 
             if (eventData.pointerEnter == MEnterDetZone_Up)
             {
-                Debug.Log("进入了 上方 区域");
+                Debug.Log("鼠标进入了 上方 区域");
                 mMouseEnteredUpper = true;
             }
             else if (eventData.pointerEnter == MEnterDetZone_Down && mMouseEnteredUpper)
             {
-                Debug.Log("进入了 下方 区域");
+                Debug.Log("鼠标进入了 下方 区域");
                 mMouseEnteredUpper = false;
-
-                MovePlayer();
             }
-        }
-
-        private void MovePlayer()
-        {
-            Player.position += Vector3.right;
         }
     }
 }
