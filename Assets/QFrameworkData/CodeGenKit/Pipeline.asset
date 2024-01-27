@@ -19,13 +19,12 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos: []
-    ScriptsFolder: Assets/Scripts/Game/Player
-    ClassName: HarpSealPup
+    ScriptsFolder: Assets/Scripts/Game
+    ClassName: Camera
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class HarpSealPup : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Camera : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:ba04bfe3-b344-4bce-b321-cef5417071bd\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class HarpSealPup\r\n\t{\r\n\r\n\t\tpublic
-      SquirmealPup.Trigger2DCheck Trigger2DCheck;\r\n\r\n\t\tpublic UnityEngine.Rigidbody2D
-      SelfRigidbody2D;\r\n\r\n\t\tpublic UnityEngine.Animator SelfAnimator;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:765a36b0-a21f-40f5-a3b8-a2d19e02e9a2\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class Camera\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.Transform Player;\r\n\r\n\t}\r\n}\r\n"
