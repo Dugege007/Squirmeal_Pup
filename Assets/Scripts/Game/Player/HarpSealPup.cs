@@ -29,8 +29,8 @@ namespace SquirmealPup
         private Vector2 mMouseLastPos = Vector2.zero;
 
         [ShowInInspector]
-        public MoveMode mCurrentMoveMode;
-        public MoveMode mLastMoveMode;
+        public MoveMode mCurrentMoveMode = MoveMode.Right;
+        public MoveMode mLastMoveMode = MoveMode.None;
 
         public bool mMovingDown = false;
         public bool mMovingUp = false;
@@ -151,7 +151,10 @@ namespace SquirmealPup
 
                 case MoveMode.Jump:
                     if (mIsBigJump)
+                    {
                         JumpForce = 450f;
+                        mIsBigJump = false;
+                    }
                     else
                         JumpForce = 300f;
                     mJumping = true;
