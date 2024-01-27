@@ -22,8 +22,6 @@ namespace SquirmealPup
 
         public float JumpForce = 300f;
 
-        public Rigidbody2D SelfRigidbody2D;
-
         [ShowInInspector]
         private Vector2 mMousePos = Vector2.zero;
         private Vector2 mMouseLastPos = Vector2.zero;
@@ -67,13 +65,18 @@ namespace SquirmealPup
         private void FixedUpdate()
         {
             if (mMovingUp || mMovingDown)
+            {
                 SelfRigidbody2D.velocity = Vector2.Lerp(SelfRigidbody2D.velocity, mTargetVelocity, 1 - Mathf.Exp(-Time.deltaTime * 5));
+            }
 
             bool isOnGround = Trigger2DCheck.IsTriggered;
+            SelfAnimator.SetBool("IsOnGround", isOnGround);
+
             if (mJumping && isOnGround)
             {
                 mJumping = false;
                 SelfRigidbody2D.AddForce(Vector2.up * JumpForce);
+                SelfAnimator.CrossFade("HarpSealPup_Jump", 0.05f);
             }
         }
 
@@ -129,6 +132,7 @@ namespace SquirmealPup
                         mMovingUp = true;
                         mMoveTimer = 0;
                         mMovingDown = false;
+                        SelfAnimator.CrossFade("HarpSealPup_MoveUp", 0.05f);
                     }
                     break;
 
@@ -138,15 +142,18 @@ namespace SquirmealPup
                         mMovingDown = true;
                         mMoveTimer = 0;
                         mMovingUp = false;
+                        SelfAnimator.CrossFade("HarpSealPup_MoveDown", 0.05f);
                     }
                     break;
 
                 case MoveMode.Left:
                     mTargetVelocity = Vector2.left * MoveSpeed;
+                    transform.localScale = new Vector3(-1, 1, 1);
                     break;
 
                 case MoveMode.Right:
                     mTargetVelocity = Vector2.right * MoveSpeed;
+                    transform.localScale = new Vector3(1, 1, 1);
                     break;
 
                 case MoveMode.Jump:
@@ -156,7 +163,9 @@ namespace SquirmealPup
                         mIsBigJump = false;
                     }
                     else
+                    {
                         JumpForce = 300f;
+                    }
                     mJumping = true;
                     mIsReady = false;
                     mReadyTime = 0;
