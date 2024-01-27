@@ -282,7 +282,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 200, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1087,11 +1087,13 @@ MonoBehaviour:
   MoveSpeed: 3.5
   JumpForce: 300
   SelfRigidbody2D: {fileID: 1250094993}
-  mIsMovingUp: 0
-  mMovingUpTime: 0
+  mMovingDown: 0
+  mMovingUp: 0
+  mMoveTimer: 0
+  mIsFreezing: 0
+  mFreezingTime: 0
   mIsReady: 0
   mReadyTime: 0
-  mCanMove: 0
 --- !u!1 &1268897328
 GameObject:
   m_ObjectHideFlags: 0

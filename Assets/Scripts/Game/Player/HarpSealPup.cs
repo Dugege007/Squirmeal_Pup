@@ -3,8 +3,7 @@ using QFramework;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using static SquirmealPup.HarpSealPup;
+using static UnityEditor.VersionControl.Asset;
 
 namespace SquirmealPup
 {
@@ -30,182 +29,182 @@ namespace SquirmealPup
 
         [ShowInInspector]
         private Vector2 mMousePos = Vector2.zero;
+        private Vector2 mMouseLastPos = Vector2.zero;
 
-        public Queue<MoveMode> MoveSteps = new Queue<MoveMode>();
+        public FSM<MoveMode> FSM = new FSM<MoveMode>();
+
         [ShowInInspector]
-        private MoveMode mMoveMode;
+        private MoveMode mCurrentMoveMode;
+        private MoveMode mLastMoveMode;
 
         [Title("状态")]
-        public bool mIsMovingUp = false;
-        public float mMovingUpTime = 0;
+        public bool mMovingDown = false;
+        public bool mMovingUp = false;
+        public float mMoveTimer = 0;
+        public bool mIsFreezing = false;
+        public float mFreezingTime = 0;
         public bool mIsReady = false;
         public float mReadyTime = 0;
-        public bool mCanMove = false;
 
         private void Update()
         {
-            mReadyTime = 0f;
+            if (mMovingUp)
+                CountMovingTime(0.3f);
+            if (mMovingDown)
+                CountMovingTime(0.5f);
+            if (mIsReady)
+                CountReadyTime(0.5f);
+            if (mIsFreezing)
+                CountFreezingTime(1.5f);
 
             // 判断鼠标位置
             mMousePos = Input.mousePosition;
+            if (Vector2.Distance(mMouseLastPos, mMousePos) > 0.05f)
+                mMouseLastPos = mMousePos;
+            else return;
 
             JudgeHorizontal();
             JudgeVertical();
 
-            Debug.Log("MoveSteps队列元素个数：" + MoveSteps.Count);
-
-            ExecuteMoveStep();
-
-            if (mCanMove)
+            if (mMovingUp || mMovingDown)
                 SelfRigidbody2D.velocity = Vector2.Lerp(SelfRigidbody2D.velocity, mTargetVelocity, 1 - Mathf.Exp(-Time.deltaTime * 5));
         }
 
         private void JudgeHorizontal()
         {
+            // 在范围外直接返回
             if (mMousePos.x > Screen.width * 0.1f && mMousePos.x < Screen.width * 0.9f) return;
-
-            MoveSteps.Clear();
 
             // 向左
             if (mMousePos.x <= Screen.width * 0.1f)
-            {
-                mMoveMode = MoveMode.Left;
-                Debug.Log("向左");
-            }
+                mCurrentMoveMode = MoveMode.Left;
             // 向右
             else if (mMousePos.x >= Screen.width * 0.9f)
-            {
-                mMoveMode = MoveMode.Right;
-                Debug.Log("向右");
-            }
+                mCurrentMoveMode = MoveMode.Right;
 
-            AddMoveStep(mMoveMode);
+            ExecuteMoveStep();
         }
 
         private void JudgeVertical()
         {
             // 跳跃或大跳
             if (mMousePos.y >= Screen.height * 0.9f)
-            {
-                mMoveMode = MoveMode.Jump;
-                Debug.Log("跳跃或大跳");
-            }
+                mCurrentMoveMode = MoveMode.Jump;
             // 准备
             else if (mMousePos.y <= Screen.height * 0.1f)
-            {
-                mMoveMode = MoveMode.Ready;
-                Debug.Log("准备");
-            }
+                mCurrentMoveMode = MoveMode.Ready;
             // 向上
             else if (mMousePos.y >= (Screen.height / 2 + Screen.height * 0.1f))
-            {
-                mMoveMode = MoveMode.Up;
-                Debug.Log("向上");
-            }
+                mCurrentMoveMode = MoveMode.Up;
             // 向下
             else if (mMousePos.y <= (Screen.height / 2 - Screen.height * 0.1f))
-            {
-                mMoveMode = MoveMode.Down;
-                Debug.Log("向下");
-            }
-            else
-                return;
+                mCurrentMoveMode = MoveMode.Down;
 
-            AddMoveStep(mMoveMode);
-        }
-
-        private void AddMoveStep(MoveMode moveMode)
-        {
-            // 判断队列中是否有相同的运动，如有则直接返回
-            if (MoveSteps.Count > 0)
-                foreach (var step in MoveSteps)
-                    if (moveMode == step) return;
-
-            MoveSteps.Enqueue(moveMode);
+            ExecuteMoveStep();
         }
 
         private void ExecuteMoveStep()
         {
-            if (mIsMovingUp)
-                CountMoveUpTime(0.5f);
+            // 判断上次是否为相同的运动，是则直接返回
+            if (mCurrentMoveMode == mLastMoveMode) return;
 
-            if (mIsReady)
-                CountReadyTime(0.5f);
+            Debug.Log("执行移动模式：" + mCurrentMoveMode);
 
-            if (MoveSteps.Count > 0)
+            switch (mCurrentMoveMode)
             {
-                switch (MoveSteps.First())
-                {
-                    case MoveMode.None:
-                        mTargetVelocity = Vector2.zero;
-                        break;
+                case MoveMode.None:
+                    mTargetVelocity = Vector2.zero;
+                    break;
 
-                    case MoveMode.Up:
-                        if (!mCanMove)
-                            mCanMove = true;
-                        if (!mIsMovingUp)
-                            mIsMovingUp = true;
-                        break;
+                case MoveMode.Up:
+                    if (!mMovingUp && !mIsFreezing)
+                    {
+                        mMovingUp = true;
+                        mMoveTimer = 0;
+                        mMovingDown = false;
+                    }
+                    break;
 
-                    case MoveMode.Down:
-                        mIsMovingUp = false;
-                        mMovingUpTime = 0;
-                        break;
+                case MoveMode.Down:
+                    if (mMovingUp && !mMovingDown && !mIsFreezing)
+                    {
+                        mMovingDown = true;
+                        mMoveTimer = 0;
+                        mMovingUp = false;
+                    }
+                    break;
 
-                    case MoveMode.Left:
-                        mTargetVelocity = Vector2.left * MoveSpeed;
-                        break;
+                case MoveMode.Left:
+                    mTargetVelocity = Vector2.left * MoveSpeed;
+                    break;
 
-                    case MoveMode.Right:
-                        mTargetVelocity = Vector2.right * MoveSpeed;
-                        break;
+                case MoveMode.Right:
+                    mTargetVelocity = Vector2.right * MoveSpeed;
+                    break;
 
-                    case MoveMode.Jump:
-                        if (mIsReady)
-                            JumpForce = 600f;
-                        else
-                            JumpForce = 300f;
-                        mIsReady = false;
+                case MoveMode.Jump:
+                    if (mIsReady)
+                        JumpForce = 600f;
+                    else
+                        JumpForce = 300f;
+                    mIsReady = false;
+                    mReadyTime = 0;
+                    break;
+
+                case MoveMode.Ready:
+                    if (!mIsReady)
+                    {
+                        mIsReady = true;
                         mReadyTime = 0;
-                        break;
+                    }
+                    break;
 
-                    case MoveMode.Ready:
-                        if (!mIsReady)
-                            mIsReady = true;
-                        break;
-
-                    default:
-                        mTargetVelocity = Vector2.zero;
-                        break;
-                }
-
-                MoveSteps.Dequeue();
+                default:
+                    mTargetVelocity = Vector2.zero;
+                    break;
             }
+
+            mLastMoveMode = mCurrentMoveMode;
         }
 
-        private void CountMoveUpTime(float moveTime)
+        private void CountMovingTime(float maxMoveTime)
         {
-            mMovingUpTime += Time.deltaTime;
+            mMoveTimer += Time.deltaTime;
 
-            if (mMovingUpTime > moveTime)
+            if (mMoveTimer > maxMoveTime)
             {
-                mIsMovingUp = false;
-                mCanMove = false;
-                mMovingUpTime = 0;
+                mMovingUp = false;
+                mMovingDown = false;
+                mMoveTimer = 0;
+
+                if (mCurrentMoveMode == mLastMoveMode)
+                {
+                    mIsFreezing = true;
+                    mFreezingTime = 0;
+                }
             }
         }
 
-        private void CountReadyTime(float moveTime)
+        private void CountFreezingTime(float maxFreezeTime)
+        {
+            mFreezingTime += Time.deltaTime;
+
+            if (mFreezingTime > maxFreezeTime)
+            {
+                mIsFreezing = false;
+                mFreezingTime = 0;
+            }
+        }
+
+        private void CountReadyTime(float maxReadyTime)
         {
             mReadyTime += Time.deltaTime;
 
-            if (mReadyTime > moveTime)
+            if (mReadyTime > maxReadyTime)
             {
                 mIsReady = false;
-                mCanMove = false;
                 mReadyTime = 0;
             }
         }
-
     }
 }
