@@ -1,9 +1,6 @@
 using UnityEngine;
 using QFramework;
 using Sirenix.OdinInspector;
-using System.Collections.Generic;
-using System.Linq;
-using static UnityEditor.VersionControl.Asset;
 
 namespace SquirmealPup
 {
@@ -32,8 +29,8 @@ namespace SquirmealPup
         private Vector2 mMouseLastPos = Vector2.zero;
 
         [ShowInInspector]
-        private MoveMode mCurrentMoveMode;
-        private MoveMode mLastMoveMode;
+        public MoveMode mCurrentMoveMode;
+        public MoveMode mLastMoveMode;
 
         public bool mMovingDown = false;
         public bool mMovingUp = false;
@@ -44,6 +41,7 @@ namespace SquirmealPup
         public float mReadyTime = 0;
 
         public bool mJumping = false;
+        public bool mIsBigJump = false;
 
         private void Update()
         {
@@ -71,7 +69,8 @@ namespace SquirmealPup
             if (mMovingUp || mMovingDown)
                 SelfRigidbody2D.velocity = Vector2.Lerp(SelfRigidbody2D.velocity, mTargetVelocity, 1 - Mathf.Exp(-Time.deltaTime * 5));
 
-            if (mJumping)
+            bool isOnGround = Trigger2DCheck.IsTriggered;
+            if (mJumping && isOnGround)
             {
                 mJumping = false;
                 SelfRigidbody2D.AddForce(Vector2.up * JumpForce);
@@ -151,8 +150,8 @@ namespace SquirmealPup
                     break;
 
                 case MoveMode.Jump:
-                    if (mIsReady)
-                        JumpForce = 600f;
+                    if (mIsBigJump)
+                        JumpForce = 450f;
                     else
                         JumpForce = 300f;
                     mJumping = true;
@@ -164,6 +163,7 @@ namespace SquirmealPup
                     if (!mIsReady)
                     {
                         mIsReady = true;
+                        mIsBigJump = true;
                         mReadyTime = 0;
                     }
                     break;
@@ -212,6 +212,7 @@ namespace SquirmealPup
             if (mReadyTime > maxReadyTime)
             {
                 mIsReady = false;
+                mIsBigJump = false;
                 mReadyTime = 0;
             }
         }

@@ -1,10 +1,12 @@
-// Generate Id:76e05378-e4c5-4e58-b63e-be7276e76022
+// Generate Id:c5dea719-b4ea-4d85-a3c6-efa896dd5527
 using UnityEngine;
 
 namespace SquirmealPup
 {
 	public partial class HarpSealPup
 	{
+
+		public Trigger2DCheck Trigger2DCheck;
 
 	}
 }

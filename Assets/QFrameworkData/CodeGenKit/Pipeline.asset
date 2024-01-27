@@ -19,16 +19,12 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos: []
-    ScriptsFolder: Assets/Scripts/Game
-    ClassName: DetectionZone
+    ScriptsFolder: Assets/Scripts/Game/Player
+    ClassName: HarpSealPup
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class DetectionZone : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class HarpSealPup : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:a592b440-c3b0-443e-afcf-3012d2c8b4f9\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class DetectionZone\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.GameObject MEnterDetZone_Top;\r\n\r\n\t\tpublic UnityEngine.GameObject
-      MEnterDetZone_Up;\r\n\r\n\t\tpublic UnityEngine.GameObject MEnterDetZone_Down;\r\n\r\n\t\tpublic
-      UnityEngine.GameObject MEnterDetZone_Bottom;\r\n\r\n\t\tpublic UnityEngine.GameObject
-      MEnterDetZone_Left;\r\n\r\n\t\tpublic UnityEngine.GameObject MEnterDetZone_Right;\r\n\r\n\t\tpublic
-      UnityEngine.Transform Player;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:c5dea719-b4ea-4d85-a3c6-efa896dd5527\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class HarpSealPup\r\n\t{\r\n\r\n\t\tpublic
+      Tigger2DCheck Trigger2DCheck;\r\n\r\n\t}\r\n}\r\n"
