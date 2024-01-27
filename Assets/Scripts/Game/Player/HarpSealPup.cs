@@ -31,13 +31,10 @@ namespace SquirmealPup
         private Vector2 mMousePos = Vector2.zero;
         private Vector2 mMouseLastPos = Vector2.zero;
 
-        public FSM<MoveMode> FSM = new FSM<MoveMode>();
-
         [ShowInInspector]
         private MoveMode mCurrentMoveMode;
         private MoveMode mLastMoveMode;
 
-        [Title("״̬")]
         public bool mMovingDown = false;
         public bool mMovingUp = false;
         public float mMoveTimer = 0;
@@ -45,6 +42,8 @@ namespace SquirmealPup
         public float mFreezingTime = 0;
         public bool mIsReady = false;
         public float mReadyTime = 0;
+
+        public bool mJumping = false;
 
         private void Update()
         {
@@ -65,9 +64,18 @@ namespace SquirmealPup
 
             JudgeHorizontal();
             JudgeVertical();
+        }
 
+        private void FixedUpdate()
+        {
             if (mMovingUp || mMovingDown)
                 SelfRigidbody2D.velocity = Vector2.Lerp(SelfRigidbody2D.velocity, mTargetVelocity, 1 - Mathf.Exp(-Time.deltaTime * 5));
+
+            if (mJumping)
+            {
+                mJumping = false;
+                SelfRigidbody2D.AddForce(Vector2.up * JumpForce);
+            }
         }
 
         private void JudgeHorizontal()
@@ -147,6 +155,7 @@ namespace SquirmealPup
                         JumpForce = 600f;
                     else
                         JumpForce = 300f;
+                    mJumping = true;
                     mIsReady = false;
                     mReadyTime = 0;
                     break;
