@@ -18,12 +18,26 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
-    ScriptsFolder: Assets/Scripts/Game
-    ClassName: FinalPoint
+    BindInfos:
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsText
+      MemberName: TipsText
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnHelp
+      MemberName: BtnHelp
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnRestart
+      MemberName: BtnRestart
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnQuit
+      MemberName: BtnQuit
+    ScriptsFolder: Assets/Scripts/Game/UI
+    ClassName: GameOverUI
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class FinalPoint : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class GameOverUI : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:70bd9f51-6c11-4c60-9e62-95f6297faaa8\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class FinalPoint\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:3da76806-2e20-4f15-abce-0f3ba56236a1\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class GameOverUI\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text TipsText;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnHelp;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnRestart;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnQuit;\r\n\r\n\t}\r\n}\r\n"

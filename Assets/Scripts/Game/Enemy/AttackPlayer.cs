@@ -11,6 +11,7 @@ namespace SquirmealPup
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+                Global.GetEat.Value = true;
                 SceneManager.LoadScene("GameOver");
             }
         }

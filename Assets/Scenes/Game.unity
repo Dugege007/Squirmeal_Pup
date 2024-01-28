@@ -1647,6 +1647,7 @@ GameObject:
   - component: {fileID: 405841351}
   - component: {fileID: 405841352}
   - component: {fileID: 405841353}
+  - component: {fileID: 405841354}
   m_Layer: 0
   m_Name: FinalPoint
   m_TagString: Untagged
@@ -1663,7 +1664,7 @@ Transform:
   m_GameObject: {fileID: 405841349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320, y: 3, z: 0}
+  m_LocalPosition: {x: 300, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1774,6 +1775,27 @@ MonoBehaviour:
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   ArchitectureFullTypeName: 
+--- !u!95 &405841354
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405841349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 732be08eec2ba7c4c82519b2c01f04f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &416830046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,6 +1874,7 @@ GameObject:
   - component: {fileID: 425016752}
   - component: {fileID: 425016753}
   - component: {fileID: 425016754}
+  - component: {fileID: 425016755}
   m_Layer: 7
   m_Name: WhiteBear
   m_TagString: Enemy
@@ -2067,6 +2090,27 @@ MonoBehaviour:
   CustomComponentName: WhiteBear
   CustomComment: 
   mComponentName: SquirmealPup.Enemy
+--- !u!95 &425016755
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425016746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4d2022741d1019409b70fd4cabbc4a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &451135245
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,7 +4180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1.1
-  m_Text: "\u9F20\n\u6807\n\u89E6\n\u78B0\n\u8FD9\n\u91CC\n\n\u8F6C\u5411"
+  m_Text: "\u9F20\n\u6807\n\u89E6\n\u78B0\n\u8FD9\n\u91CC\n\u8F6C\u5411"
 --- !u!222 &1072031107
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4603,7 +4647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1.1
-  m_Text: "\u9F20\n\u6807\n\u89E6\n\u78B0\n\u8FD9\n\u91CC\n\n\u8F6C\u5411"
+  m_Text: "\u9F20\n\u6807\n\u89E6\n\u78B0\n\u8FD9\n\u91CC\n\u8F6C\u5411"
 --- !u!222 &1191496719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5139,6 +5183,7 @@ GameObject:
   - component: {fileID: 1334365022}
   - component: {fileID: 1334365027}
   - component: {fileID: 1334365026}
+  - component: {fileID: 1334365028}
   m_Layer: 6
   m_Name: SmallPenguin
   m_TagString: Collectable
@@ -5332,6 +5377,27 @@ MonoBehaviour:
   FallCheck: {fileID: 860233490}
   WallCheck: {fileID: 698446367}
   SelfRigidbody2D: {fileID: 1334365022}
+--- !u!95 &1334365028
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334365016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d403a7dd72ec1849a8a7a840b226c8e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1334796566
 GameObject:
   m_ObjectHideFlags: 0

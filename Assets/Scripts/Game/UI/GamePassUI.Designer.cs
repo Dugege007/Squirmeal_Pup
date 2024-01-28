@@ -1,4 +1,4 @@
-// Generate Id:d397bf71-61a7-4d3a-bb04-b19bc86760a5
+// Generate Id:90c8e518-077b-49db-bfcd-35e56a208a5c
 using UnityEngine;
 
 namespace SquirmealPup
@@ -7,6 +7,8 @@ namespace SquirmealPup
 	{
 
 		public UnityEngine.UI.Text ScoreText;
+
+		public UnityEngine.UI.Text RemainTimeText;
 
 		public UnityEngine.UI.Button BtnHelp;
 

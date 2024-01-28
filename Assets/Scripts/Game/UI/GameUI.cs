@@ -35,6 +35,7 @@ namespace SquirmealPup
 
             if (Global.CurrentTime.Value > 90)
             {
+                Global.TimeOver.Value = true;
                 SceneManager.LoadScene("GameOver");
             }
         }

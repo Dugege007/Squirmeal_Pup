@@ -1,10 +1,12 @@
-// Generate Id:3ea2337c-0cef-4c63-9bff-969bf1fb227a
+// Generate Id:3da76806-2e20-4f15-abce-0f3ba56236a1
 using UnityEngine;
 
 namespace SquirmealPup
 {
 	public partial class GameOverUI
 	{
+
+		public UnityEngine.UI.Text TipsText;
 
 		public UnityEngine.UI.Button BtnHelp;
 

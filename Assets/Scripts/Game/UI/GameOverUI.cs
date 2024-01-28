@@ -15,10 +15,22 @@ namespace SquirmealPup
 
             BtnRestart.onClick.AddListener(() =>
             {
+                Global.ResetData();
                 SceneManager.LoadScene("Game");
             });
+        }
 
+        private void Start()
+        {
+            if (Global.TimeOver.Value)
+            {
+                TipsText.text = "时间到！（提示：本关需90s内到达终点）";
+            }
 
+            if (Global.GetEat.Value)
+            {
+                TipsText.text = "被吃了！（提示：不要往左边走）";
+            }
         }
     }
 }

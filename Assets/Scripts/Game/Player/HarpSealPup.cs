@@ -125,7 +125,7 @@ namespace SquirmealPup
             switch (mCurrentMoveMode)
             {
                 case MoveMode.None:
-                    mTargetVelocity = Vector2.zero;
+                    mTargetVelocity = Vector2.right;
                     break;
 
                 case MoveMode.Up:
@@ -183,7 +183,7 @@ namespace SquirmealPup
                     break;
 
                 default:
-                    mTargetVelocity = Vector2.zero;
+                    mTargetVelocity = Vector2.right;
                     break;
             }
 
