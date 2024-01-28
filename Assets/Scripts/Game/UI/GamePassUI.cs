@@ -20,7 +20,7 @@ namespace SquirmealPup
             });
 
             ScoreText.text = "本局分数：" + Global.Score.Value;
-            RemainTimeText.text = "剩余时间：" + (90 - Global.CurrentTime.Value);
+            RemainTimeText.text = "剩余时间：" + (90 - Global.CurrentTime.Value) + "s";
         }
     }
 }
