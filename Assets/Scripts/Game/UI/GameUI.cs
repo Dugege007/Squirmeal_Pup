@@ -35,7 +35,7 @@ namespace SquirmealPup
 
             if (Global.CurrentTime.Value > 90)
             {
-                SceneManager.LoadScene("GamePass");
+                SceneManager.LoadScene("GameOver");
             }
         }
     }

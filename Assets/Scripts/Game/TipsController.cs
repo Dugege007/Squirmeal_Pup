@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using UnityEngine.UI;
 
 namespace SquirmealPup
 {
@@ -30,6 +31,7 @@ namespace SquirmealPup
                 {
                     LeftText.Show();
                     RightText.Show();
+                    StartRightText.Show();
                     UpText.Show();
                     DownText.Show();
                 }
@@ -47,6 +49,8 @@ namespace SquirmealPup
             {
                 if (collider2D.CompareTag("Player"))
                 {
+                    StartRightText.Show();
+                    StartRightText.GetComponent<Text>().text = "向着终点前进→";
                     BottomText.Show();
                 }
             });
@@ -74,6 +78,7 @@ namespace SquirmealPup
                 {
                     LeftText.Hide();
                     RightText.Hide();
+                    StartRightText.Hide();
                     UpText.Hide();
                     DownText.Hide();
                 }

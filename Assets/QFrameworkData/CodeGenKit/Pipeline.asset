@@ -18,34 +18,12 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: BoxCollider2D
-      PathToRoot: Bear
-      MemberName: Bear
-    - TypeName: BoxCollider2D
-      PathToRoot: LeftAndRightAndUpAndDown
-      MemberName: LeftAndRightAndUpAndDown
-    - TypeName: BoxCollider2D
-      PathToRoot: TipsArea
-      MemberName: TipsArea
-    - TypeName: BoxCollider2D
-      PathToRoot: Jump
-      MemberName: Jump
-    - TypeName: BoxCollider2D
-      PathToRoot: BigJump
-      MemberName: BigJump
+    BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: TipsController
+    ClassName: FinalPoint
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class TipsController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class FinalPoint : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:5e561ffe-9dba-402b-97a3-952bff2b2692\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class TipsController\r\n\t{\r\n\r\n\t\tpublic
-      BoxCollider2D Bear;\r\n\r\n\t\tpublic BoxCollider2D LeftAndRightAndUpAndDown;\r\n\r\n\t\tpublic
-      BoxCollider2D TipsArea;\r\n\r\n\t\tpublic BoxCollider2D Jump;\r\n\r\n\t\tpublic
-      BoxCollider2D BigJump;\r\n\r\n\t\tpublic UnityEngine.GameObject LeftText;\r\n\r\n\t\tpublic
-      UnityEngine.GameObject RightText;\r\n\r\n\t\tpublic UnityEngine.GameObject
-      StartRightText;\r\n\r\n\t\tpublic UnityEngine.GameObject UpText;\r\n\r\n\t\tpublic
-      UnityEngine.GameObject DownText;\r\n\r\n\t\tpublic UnityEngine.GameObject BearText;\r\n\r\n\t\tpublic
-      UnityEngine.GameObject TopText;\r\n\r\n\t\tpublic UnityEngine.GameObject BottomText;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:70bd9f51-6c11-4c60-9e62-95f6297faaa8\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class FinalPoint\r\n\t{\r\n\r\n\t}\r\n}\r\n"
