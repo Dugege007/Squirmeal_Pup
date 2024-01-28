@@ -20,24 +20,49 @@ MonoBehaviour:
     NameToFullName: []
     BindInfos:
     - TypeName: UnityEngine.UI.Text
-      PathToRoot: ScoreText
-      MemberName: ScoreText
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnHelp
-      MemberName: BtnHelp
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRestart
-      MemberName: BtnRestart
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnQuit
-      MemberName: BtnQuit
-    ScriptsFolder: Assets\Scripts\Game\UI
-    ClassName: GamePassUI
+      PathToRoot: InfoGoup/ScoreTitle/Score
+      MemberName: Score
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: InfoGoup/CurrentTimeTitle/CurrentTime
+      MemberName: CurrentTime
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/StartText
+      MemberName: StartText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/LeftText
+      MemberName: LeftText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/RightText
+      MemberName: RightText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/StartRightText
+      MemberName: StartRightText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/UpText
+      MemberName: UpText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/DownText
+      MemberName: DownText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/BearText
+      MemberName: BearText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/TopText
+      MemberName: TopText
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: TipsGroup/BottomText
+      MemberName: BottomText
+    ScriptsFolder: Assets/Scripts/Game/UI
+    ClassName: GameUI
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class GamePassUI : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class GameUI : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:d397bf71-61a7-4d3a-bb04-b19bc86760a5\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class GamePassUI\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Text ScoreText;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnHelp;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnRestart;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnQuit;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:3f68ebcf-aab3-4e6a-bef2-6baeef2918b7\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class GameUI\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text Score;\r\n\r\n\t\tpublic UnityEngine.UI.Text CurrentTime;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text StartText;\r\n\r\n\t\tpublic UnityEngine.UI.Text LeftText;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text RightText;\r\n\r\n\t\tpublic UnityEngine.UI.Text StartRightText;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text UpText;\r\n\r\n\t\tpublic UnityEngine.UI.Text DownText;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text BearText;\r\n\r\n\t\tpublic UnityEngine.UI.Text TopText;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text BottomText;\r\n\r\n\t}\r\n}\r\n"

@@ -50,7 +50,7 @@ namespace SquirmealPup
             if (mIsReady)
                 CountReadyTime(0.5f);
             if (mIsFreezing)
-                CountFreezingTime(1.5f);
+                CountFreezingTime(1.2f);
 
             // ≈–∂œ Û±ÍŒª÷√
             mMousePos = Input.mousePosition;

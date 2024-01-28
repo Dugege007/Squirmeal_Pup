@@ -18,8 +18,6 @@ namespace SquirmealPup
             float randomForce = Random.Range(MinJumpForce, MaxJumpForce);
 
             SelfRigidbody2D.AddForce(jumpDirection * randomForce);
-
-            Destroy(gameObject, 3f);
         }
 
         private void Update()

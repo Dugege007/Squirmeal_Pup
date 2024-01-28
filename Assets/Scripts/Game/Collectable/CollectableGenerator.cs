@@ -34,6 +34,7 @@ namespace SquirmealPup
             {
                 Fish.InstantiateWithParent(this)
                     .Position(FishGPos.position)
+                    .DestroyGameObjAfterDelayGracefully(3)
                     .Show();
                 mCurrentFishGTime = 0;
             }
