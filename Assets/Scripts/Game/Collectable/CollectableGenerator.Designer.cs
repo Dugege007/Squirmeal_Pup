@@ -1,4 +1,4 @@
-// Generate Id:22a448f8-abce-486e-91b2-7f7d049b6177
+// Generate Id:e0c319a3-c095-45e7-aee3-b6d290ed75e1
 using UnityEngine;
 
 namespace SquirmealPup
@@ -11,6 +11,10 @@ namespace SquirmealPup
 		public SquirmealPup.Enemy SmallPenguin;
 
 		public SquirmealPup.Star Star;
+
+		public UnityEngine.Transform FishGPos;
+
+		public UnityEngine.Transform PenguinGPos;
 
 	}
 }

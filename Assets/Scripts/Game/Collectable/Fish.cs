@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using UnityEngine.SceneManagement;
 
 namespace SquirmealPup
 {
@@ -28,6 +29,14 @@ namespace SquirmealPup
             {
                 float angle = Mathf.Atan2(SelfRigidbody2D.velocity.y, SelfRigidbody2D.velocity.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                
             }
         }
     }
