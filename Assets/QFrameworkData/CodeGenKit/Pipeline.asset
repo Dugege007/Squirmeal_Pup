@@ -19,12 +19,11 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos: []
-    ScriptsFolder: Assets/Scripts/Game
-    ClassName: Camera
+    ScriptsFolder: Assets/Scripts/Game/Enemy
+    ClassName: Enemy
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class Camera : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Enemy : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:765a36b0-a21f-40f5-a3b8-a2d19e02e9a2\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class Camera\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.Transform Player;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:61354348-6b5b-4c33-b95a-da2c6911a8c4\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class Enemy\r\n\t{\r\n\r\n\t}\r\n}\r\n"
