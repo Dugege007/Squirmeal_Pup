@@ -1,11 +1,14 @@
 using UnityEngine;
 using QFramework;
 using Sirenix.OdinInspector;
+using QAssetBundle;
 
 namespace SquirmealPup
 {
     public partial class HarpSealPup : ViewController
     {
+        public static HarpSealPup Default;
+
         public enum MoveMode
         {
             None,
@@ -17,10 +20,10 @@ namespace SquirmealPup
             Ready,
         }
 
-        public float MoveSpeed = 3.5f;
+        public float MoveSpeed = 4f;
         private Vector2 mTargetVelocity = Vector2.zero;
 
-        public float JumpForce = 300f;
+        public float JumpForce = 350f;
 
         [ShowInInspector]
         private Vector2 mMousePos = Vector2.zero;
@@ -60,8 +63,6 @@ namespace SquirmealPup
 
             JudgeHorizontal();
             JudgeVertical();
-
-
         }
 
         private void FixedUpdate()
@@ -76,6 +77,9 @@ namespace SquirmealPup
 
             if (mJumping && isOnGround)
             {
+                //AudioKit.PlaySound(Sfx.JUMP);
+                Jump.Play();
+
                 mJumping = false;
                 SelfRigidbody2D.AddForce(Vector2.up * JumpForce);
                 SelfAnimator.CrossFade("HarpSealPup_Jump", 0.05f);
@@ -131,6 +135,9 @@ namespace SquirmealPup
                 case MoveMode.Up:
                     if (!mMovingUp && !mIsFreezing)
                     {
+                        //AudioKit.PlaySound(Sfx.SNOWSTEP1);
+                        Step1.Play();
+
                         mMovingUp = true;
                         mMoveTimer = 0;
                         mMovingDown = false;
@@ -141,6 +148,9 @@ namespace SquirmealPup
                 case MoveMode.Down:
                     if (mMovingUp && !mMovingDown && !mIsFreezing)
                     {
+                        //AudioKit.PlaySound(Sfx.SNOWSTEP2);
+                        Step2.Play();
+
                         mMovingDown = true;
                         mMoveTimer = 0;
                         mMovingUp = false;

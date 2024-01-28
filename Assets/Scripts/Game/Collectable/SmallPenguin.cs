@@ -1,10 +1,11 @@
 using UnityEngine;
 using QFramework;
+using QAssetBundle;
 
 namespace SquirmealPup
 {
-	public partial class SmallPenguin : ViewController
-	{
+    public partial class SmallPenguin : ViewController
+    {
         public float MoveSpeed = 3f;
 
         private void FixedUpdate()
@@ -29,6 +30,9 @@ namespace SquirmealPup
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+                //AudioKit.PlaySound(Sfx.EAT);
+                Eat.Play();
+
                 Global.Score.Value += 5;
                 Destroy(gameObject);
             }

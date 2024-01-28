@@ -19,6 +19,10 @@ namespace SquirmealPup
         [RuntimeInitializeOnLoadMethod]
         public static void AutoInit()
         {
+            AudioKit.PlaySoundMode = AudioKit.PlaySoundModes.IgnoreSameSoundInGlobalFrames;
+            ResKit.Init();
+
+            IArchitecture _ = Interface;
         }
 
         public static void ResetData()

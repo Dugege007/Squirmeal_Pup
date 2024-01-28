@@ -1,6 +1,7 @@
 using UnityEngine;
 using QFramework;
 using UnityEngine.SceneManagement;
+using QAssetBundle;
 
 namespace SquirmealPup
 {
@@ -34,6 +35,9 @@ namespace SquirmealPup
         {
             if (collision.CompareTag("Player"))
             {
+                //AudioKit.PlaySound(Sfx.EAT);
+                Eat.Play();
+
                 Global.Score.Value += 3;
                 Destroy(gameObject);
             }

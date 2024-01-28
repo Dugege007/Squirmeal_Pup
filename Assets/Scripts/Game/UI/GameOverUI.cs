@@ -1,6 +1,7 @@
 using UnityEngine;
 using QFramework;
 using UnityEngine.SceneManagement;
+using QAssetBundle;
 
 namespace SquirmealPup
 {
@@ -30,6 +31,9 @@ namespace SquirmealPup
             if (Global.GetEat.Value)
             {
                 TipsText.text = "被吃了！（提示：不要往左边走）";
+
+                //AudioKit.PlaySound(Sfx.BEARATTACK);
+                SFX.Play();
             }
         }
     }

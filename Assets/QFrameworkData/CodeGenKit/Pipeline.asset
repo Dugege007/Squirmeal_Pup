@@ -19,25 +19,24 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: UnityEngine.UI.Text
-      PathToRoot: TipsText
-      MemberName: TipsText
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnHelp
-      MemberName: BtnHelp
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRestart
-      MemberName: BtnRestart
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnQuit
-      MemberName: BtnQuit
-    ScriptsFolder: Assets/Scripts/Game/UI
-    ClassName: GameOverUI
+    - TypeName: SquirmealPup.Trigger2DCheck
+      PathToRoot: GroundCheck
+      MemberName: GroundCheck
+    - TypeName: SquirmealPup.Trigger2DCheck
+      PathToRoot: FallCheck
+      MemberName: FallCheck
+    - TypeName: SquirmealPup.Trigger2DCheck
+      PathToRoot: WallCheck
+      MemberName: WallCheck
+    ScriptsFolder: Assets/Scripts/Game/Collectable
+    ClassName: SmallPenguin
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class GameOverUI : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class SmallPenguin : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:3da76806-2e20-4f15-abce-0f3ba56236a1\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class GameOverUI\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Text TipsText;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnHelp;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnRestart;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnQuit;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:9ece313d-05a3-4705-9a1f-c245c838c984\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class SmallPenguin\r\n\t{\r\n\r\n\t\tpublic
+      SquirmealPup.Trigger2DCheck GroundCheck;\r\n\r\n\t\tpublic SquirmealPup.Trigger2DCheck
+      FallCheck;\r\n\r\n\t\tpublic SquirmealPup.Trigger2DCheck WallCheck;\r\n\r\n\t\tpublic
+      UnityEngine.Rigidbody2D SelfRigidbody2D;\r\n\r\n\t\tpublic UnityEngine.AudioSource
+      Eat;\r\n\r\n\t}\r\n}\r\n"

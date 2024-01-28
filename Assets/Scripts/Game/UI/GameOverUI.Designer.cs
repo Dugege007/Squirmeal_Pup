@@ -1,4 +1,4 @@
-// Generate Id:3da76806-2e20-4f15-abce-0f3ba56236a1
+// Generate Id:b88196db-0136-4436-a2c7-5cb144649636
 using UnityEngine;
 
 namespace SquirmealPup
@@ -13,6 +13,8 @@ namespace SquirmealPup
 		public UnityEngine.UI.Button BtnRestart;
 
 		public UnityEngine.UI.Button BtnQuit;
+
+		public UnityEngine.AudioSource SFX;
 
 	}
 }

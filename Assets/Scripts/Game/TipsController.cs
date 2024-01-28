@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 namespace SquirmealPup
 {
-	public partial class TipsController : ViewController
-	{
+    public partial class TipsController : ViewController
+    {
         private void Awake()
         {
             // ½øÈë

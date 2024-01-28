@@ -1,4 +1,4 @@
-// Generate Id:e76b6a74-49dc-4c8c-9bc9-341639dafba4
+// Generate Id:c06917fd-db36-416f-b93d-72b514a01dac
 using UnityEngine;
 
 namespace SquirmealPup
@@ -7,6 +7,8 @@ namespace SquirmealPup
 	{
 
 		public UnityEngine.Rigidbody2D SelfRigidbody2D;
+
+		public UnityEngine.AudioSource Eat;
 
 	}
 }
