@@ -1,4 +1,4 @@
-// Generate Id:e0c319a3-c095-45e7-aee3-b6d290ed75e1
+// Generate Id:ffab5018-04fb-460e-9fc2-b0550333b9a3
 using UnityEngine;
 
 namespace SquirmealPup
@@ -8,7 +8,7 @@ namespace SquirmealPup
 
 		public SquirmealPup.Fish Fish;
 
-		public SquirmealPup.Enemy SmallPenguin;
+		public SquirmealPup.SmallPenguin SmallPenguin;
 
 		public SquirmealPup.Star Star;
 

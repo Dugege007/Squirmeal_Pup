@@ -5,9 +5,13 @@ namespace SquirmealPup
 {
 	public partial class Star : ViewController
 	{
-		void Start()
-		{
-			// Code Here
-		}
-	}
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Global.Score.Value++;
+                Destroy(gameObject);
+            }
+        }
+    }
 }

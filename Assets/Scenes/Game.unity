@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 32294687}
   - component: {fileID: 32294686}
   m_Layer: 5
-  m_Name: Time
+  m_Name: CurrentTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 120s
+  m_Text: 00
 --- !u!222 &32294689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2007,7 +2007,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 383026765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81936539ae2d84665a86a2b3f531955f, type: 3}
+  m_Script: {fileID: 11500000, guid: 51b42b041e813f943a21cca9ff21ff67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Namespace: SquirmealPup
@@ -2016,6 +2016,8 @@ MonoBehaviour:
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   ArchitectureFullTypeName: 
+  Score: {fileID: 1471795745}
+  CurrentTime: {fileID: 32294688}
 --- !u!1 &393387227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5873,11 +5875,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1334365018}
   - component: {fileID: 1334365017}
-  - component: {fileID: 1334365022}
   - component: {fileID: 1334365021}
-  - component: {fileID: 1334365023}
-  - component: {fileID: 1334365024}
   - component: {fileID: 1334365025}
+  - component: {fileID: 1334365022}
+  - component: {fileID: 1334365027}
+  - component: {fileID: 1334365026}
   m_Layer: 6
   m_Name: SmallPenguin
   m_TagString: Collectable
@@ -6017,44 +6019,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1334365023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334365016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59cbe92391cb4d946a3491d2432e28b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: SquirmealPup
-  ScriptName: Enemy
-  ScriptsFolder: Assets\Scripts\Game\Enemy
-  GeneratePrefab: 0
-  PrefabFolder: Assets/Art/Prefab
-  ArchitectureFullTypeName: 
-  MoveSpeed: 3
-  GroundCheck: {fileID: 1893651127}
-  FallCheck: {fileID: 860233490}
-  WallCheck: {fileID: 698446367}
-  SelfRigidbody2D: {fileID: 1334365022}
---- !u!114 &1334365024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334365016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Binds:
-  - MemberName: SelfRigidbody2D
-    Object: {fileID: 1334365022}
 --- !u!114 &1334365025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6070,7 +6034,45 @@ MonoBehaviour:
   MarkType: 0
   CustomComponentName: SmallPenguin
   CustomComment: 
-  mComponentName: SquirmealPup.Enemy
+  mComponentName: SquirmealPup.SmallPenguin
+--- !u!114 &1334365026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334365016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Binds:
+  - MemberName: SelfRigidbody2D
+    Object: {fileID: 1334365022}
+--- !u!114 &1334365027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334365016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3d9331aa38ef441a8303f27c7e5e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: SquirmealPup
+  ScriptName: SmallPenguin
+  ScriptsFolder: Assets/Scripts/Game/Collectable
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  MoveSpeed: 3
+  GroundCheck: {fileID: 1893651127}
+  FallCheck: {fileID: 860233490}
+  WallCheck: {fileID: 698446367}
+  SelfRigidbody2D: {fileID: 1334365022}
 --- !u!1 &1362327997
 GameObject:
   m_ObjectHideFlags: 0
@@ -7573,7 +7575,7 @@ MonoBehaviour:
   - {fileID: 1725839801}
   - {fileID: 22993581}
   Fish: {fileID: 871316909}
-  SmallPenguin: {fileID: 1334365023}
+  SmallPenguin: {fileID: 1334365027}
   Star: {fileID: 1749410628}
   FishGPos: {fileID: 1362327998}
   PenguinGPos: {fileID: 957657530}
@@ -8170,7 +8172,7 @@ GameObject:
   - component: {fileID: 1888111680}
   - component: {fileID: 1888111679}
   m_Layer: 5
-  m_Name: RemainTimeTitle
+  m_Name: CurrentTimeTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

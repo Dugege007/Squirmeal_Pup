@@ -19,23 +19,25 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: SquirmealPup.Fish
-      PathToRoot: Fish
-      MemberName: Fish
-    - TypeName: SquirmealPup.Enemy
-      PathToRoot: SmallPenguin
-      MemberName: SmallPenguin
-    - TypeName: SquirmealPup.Star
-      PathToRoot: Star
-      MemberName: Star
-    ScriptsFolder: Assets/Scripts/Game/Collectable
-    ClassName: CollectableGenerator
+    - TypeName: UnityEngine.UI.Text
+      PathToRoot: ScoreText
+      MemberName: ScoreText
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnHelp
+      MemberName: BtnHelp
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnRestart
+      MemberName: BtnRestart
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnQuit
+      MemberName: BtnQuit
+    ScriptsFolder: Assets\Scripts\Game\UI
+    ClassName: GamePassUI
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class CollectableGenerator : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class GamePassUI : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:e0c319a3-c095-45e7-aee3-b6d290ed75e1\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class CollectableGenerator\r\n\t{\r\n\r\n\t\tpublic
-      SquirmealPup.Fish Fish;\r\n\r\n\t\tpublic SquirmealPup.Enemy SmallPenguin;\r\n\r\n\t\tpublic
-      SquirmealPup.Star Star;\r\n\r\n\t\tpublic UnityEngine.Transform FishGPos;\r\n\r\n\t\tpublic
-      UnityEngine.Transform PenguinGPos;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:d397bf71-61a7-4d3a-bb04-b19bc86760a5\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class GamePassUI\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Text ScoreText;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnHelp;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnRestart;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnQuit;\r\n\r\n\t}\r\n}\r\n"

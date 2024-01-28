@@ -1,10 +1,14 @@
-// Generate Id:14d16b99-b8ac-471e-b048-b563c973ace9
+// Generate Id:fb78e283-bc54-46d4-b426-6df3190b43a3
 using UnityEngine;
 
 namespace SquirmealPup
 {
 	public partial class GameUI
-    {
+	{
+
+		public UnityEngine.UI.Text Score;
+
+		public UnityEngine.UI.Text CurrentTime;
 
 	}
 }

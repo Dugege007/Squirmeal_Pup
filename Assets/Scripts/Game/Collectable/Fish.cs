@@ -36,7 +36,8 @@ namespace SquirmealPup
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                
+                Global.Score.Value += 3;
+                Destroy(gameObject);
             }
         }
     }

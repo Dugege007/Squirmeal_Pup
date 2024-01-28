@@ -27,19 +27,19 @@ namespace SquirmealPup
         private Vector2 mMouseLastPos = Vector2.zero;
 
         [ShowInInspector]
-        public MoveMode mCurrentMoveMode = MoveMode.Right;
-        public MoveMode mLastMoveMode = MoveMode.None;
+        private MoveMode mCurrentMoveMode = MoveMode.Right;
+        private MoveMode mLastMoveMode = MoveMode.None;
 
-        public bool mMovingDown = false;
-        public bool mMovingUp = false;
-        public float mMoveTimer = 0;
-        public bool mIsFreezing = false;
-        public float mFreezingTime = 0;
-        public bool mIsReady = false;
-        public float mReadyTime = 0;
+        private bool mMovingDown = false;
+        private bool mMovingUp = false;
+        private float mMoveTimer = 0;
+        private bool mIsFreezing = false;
+        private float mFreezingTime = 0;
+        private bool mIsReady = false;
+        private float mReadyTime = 0;
 
-        public bool mJumping = false;
-        public bool mIsBigJump = false;
+        private bool mJumping = false;
+        private bool mIsBigJump = false;
 
         private void Update()
         {
@@ -60,6 +60,8 @@ namespace SquirmealPup
 
             JudgeHorizontal();
             JudgeVertical();
+
+
         }
 
         private void FixedUpdate()
