@@ -938,6 +938,37 @@ Transform:
   - {fileID: 1283896489}
   m_Father: {fileID: 780235089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &244670795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244670796}
+  m_Layer: 0
+  m_Name: EnemyGPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244670796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244670795}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: -3, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &286146361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2018,7 @@ GameObject:
   - component: {fileID: 425016751}
   - component: {fileID: 425016752}
   - component: {fileID: 425016753}
+  - component: {fileID: 425016754}
   m_Layer: 0
   m_Name: WhiteBear
   m_TagString: Enemy
@@ -2034,7 +2066,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 11451bea5ce10fe47a216c1316cf20a2, type: 3}
   m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_FlipX: 1
@@ -2186,6 +2218,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fd63bc159dec844951f973a99917c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &425016754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425016746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: WhiteBear
+  CustomComment: 
+  mComponentName: SquirmealPup.Enemy
 --- !u!1 &447573180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,7 +2755,8 @@ Transform:
   m_LocalPosition: {x: -5, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 244670796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -7202,7 +7251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1635765705
 Transform:
   m_ObjectHideFlags: 0
@@ -7235,7 +7284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Namespace: SquirmealPup
   ScriptName: CollectableGenerator
-  ScriptsFolder: Assets/Scripts/Game
+  ScriptsFolder: Assets/Scripts/Game/Collectable
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   ArchitectureFullTypeName: 
@@ -7286,6 +7335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699519631}
   - component: {fileID: 1699519632}
+  - component: {fileID: 1699519633}
   m_Layer: 0
   m_Name: EnemyGenerator
   m_TagString: Untagged
@@ -7327,6 +7377,25 @@ MonoBehaviour:
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   ArchitectureFullTypeName: 
+  MinGTime: 15
+  MaxGTime: 30
+  WhiteBear: {fileID: 425016750}
+  EnemyGPos: {fileID: 244670796}
+--- !u!114 &1699519633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699519630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Binds:
+  - MemberName: EnemyGPos
+    Object: {fileID: 244670796}
 --- !u!1 &1708289543
 GameObject:
   m_ObjectHideFlags: 0

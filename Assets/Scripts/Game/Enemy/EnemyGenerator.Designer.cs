@@ -1,10 +1,14 @@
-// Generate Id:5a4adb0a-7d60-4d82-b1b7-39b6bcd99761
+// Generate Id:2aa5f8f8-4901-49b5-8631-aec55ccd1dc4
 using UnityEngine;
 
 namespace SquirmealPup
 {
 	public partial class EnemyGenerator
 	{
+
+		public SquirmealPup.Enemy WhiteBear;
+
+		public UnityEngine.Transform EnemyGPos;
 
 	}
 }
