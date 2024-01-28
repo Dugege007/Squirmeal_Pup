@@ -17,7 +17,8 @@ namespace SquirmealPup
 
         private void Update()
         {
-            mCurrentGTime += Time.deltaTime;
+            if (!Global.IsInTipsArea.Value)
+                mCurrentGTime += Time.deltaTime;
 
             if (mCurrentGTime > Random.Range(MinGTime, MaxGTime))
             {

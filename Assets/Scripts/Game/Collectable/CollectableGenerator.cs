@@ -29,7 +29,13 @@ namespace SquirmealPup
 
         private void Update()
         {
-            mCurrentFishGTime += Time.deltaTime;
+            if (!Global.IsInTipsArea.Value)
+            {
+                mCurrentFishGTime += Time.deltaTime;
+                mCurrentPenguinGTime += Time.deltaTime;
+                mCurrentStarGTime += Time.deltaTime;
+            }
+
             if (mCurrentFishGTime > Random.Range(MinFishGTime, MaxFishGTime))
             {
                 Fish.InstantiateWithParent(this)
@@ -39,7 +45,6 @@ namespace SquirmealPup
                 mCurrentFishGTime = 0;
             }
 
-            mCurrentPenguinGTime += Time.deltaTime;
             if (mCurrentPenguinGTime > Random.Range(MinPenguinGTime, MaxPenguinGTime))
             {
                 SmallPenguin.InstantiateWithParent(this)
@@ -48,7 +53,6 @@ namespace SquirmealPup
                 mCurrentPenguinGTime = 0;
             }
 
-            mCurrentStarGTime += Time.deltaTime;
             if (mCurrentStarGTime > Random.Range(MinStarGTime, MaxStarGTime))
             {
                 Vector3 randomGPos = StarGPoss[Random.Range(0, StarGPoss.Count - 1)].position;

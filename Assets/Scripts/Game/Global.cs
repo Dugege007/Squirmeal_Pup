@@ -7,6 +7,7 @@ namespace SquirmealPup
     {
         public static BindableProperty<int> Score = new(0);
         public static BindableProperty<float> CurrentTime = new(0);
+        public static BindableProperty<bool> IsInTipsArea = new(true);
 
         protected override void Init()
         {

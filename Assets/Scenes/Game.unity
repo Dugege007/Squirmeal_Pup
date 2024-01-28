@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &30201360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   MarkType: 0
   CustomComponentName: Jump
   CustomComment: 
-  mComponentName: 
+  mComponentName: BoxCollider2D
 --- !u!1 &244670795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1393,7 @@ MonoBehaviour:
   MarkType: 0
   CustomComponentName: Jump
   CustomComment: 
-  mComponentName: 
+  mComponentName: BoxCollider2D
 --- !u!1 &286146361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,8 +5304,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975333940}
-  - component: {fileID: 975333941}
   - component: {fileID: 975333942}
+  - component: {fileID: 975333943}
   m_Layer: 0
   m_Name: TipsController
   m_TagString: Untagged
@@ -5328,28 +5328,11 @@ Transform:
   m_Children:
   - {fileID: 181874092}
   - {fileID: 1772902447}
+  - {fileID: 1385451860}
   - {fileID: 114996291}
   - {fileID: 273557003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &975333941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975333939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81936539ae2d84665a86a2b3f531955f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: SquirmealPup
-  ScriptName: TipsController
-  ScriptsFolder: Assets/Scripts/Game
-  GeneratePrefab: 0
-  PrefabFolder: Assets/Art/Prefab
-  ArchitectureFullTypeName: 
 --- !u!114 &975333942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5379,6 +5362,37 @@ MonoBehaviour:
     Object: {fileID: 2100210994}
   - MemberName: BottomText
     Object: {fileID: 351224268}
+--- !u!114 &975333943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975333939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6009ee4fcf12c144abfca53e7f9378d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: SquirmealPup
+  ScriptName: TipsController
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  Bear: {fileID: 181874093}
+  LeftAndRightAndUpAndDown: {fileID: 1772902448}
+  TipsArea: {fileID: 1385451862}
+  Jump: {fileID: 114996292}
+  BigJump: {fileID: 273557004}
+  LeftText: {fileID: 1072031101}
+  RightText: {fileID: 1191496713}
+  StartRightText: {fileID: 1559183822}
+  UpText: {fileID: 1334796566}
+  DownText: {fileID: 1264363088}
+  BearText: {fileID: 1862582177}
+  TopText: {fileID: 2100210994}
+  BottomText: {fileID: 351224268}
 --- !u!1 &998798885
 GameObject:
   m_ObjectHideFlags: 0
@@ -6781,7 +6795,7 @@ Transform:
   m_GameObject: {fileID: 1283896488}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -2.5, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6822,10 +6836,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1087316278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -50}
+  m_SizeDelta: {x: 1920, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305203983
 MonoBehaviour:
@@ -7237,6 +7251,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1385451859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385451860}
+  - component: {fileID: 1385451862}
+  - component: {fileID: 1385451861}
+  m_Layer: 8
+  m_Name: TipsArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385451860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385451859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 975333940}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385451861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385451859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: Jump
+  CustomComment: 
+  mComponentName: BoxCollider2D
+--- !u!61 &1385451862
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385451859}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 15, y: 3}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 50, y: 10}
+  m_EdgeRadius: 0
 --- !u!1 &1390565346
 GameObject:
   m_ObjectHideFlags: 0
@@ -9043,10 +9151,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2063396482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 440}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -440}
+  m_SizeDelta: {x: 1920, y: 440}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1708289545
 MonoBehaviour:
@@ -9394,7 +9502,7 @@ MonoBehaviour:
   MarkType: 0
   CustomComponentName: Jump
   CustomComment: 
-  mComponentName: 
+  mComponentName: BoxCollider2D
 --- !u!1 &1835741430
 GameObject:
   m_ObjectHideFlags: 0
@@ -10224,10 +10332,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1087316278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 440}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -100}
+  m_SizeDelta: {x: 1920, y: 440}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1958522437
 MonoBehaviour:
@@ -10386,10 +10494,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2063396482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -540}
+  m_SizeDelta: {x: 1920, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2015713576
 MonoBehaviour:
