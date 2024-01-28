@@ -18,12 +18,23 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
-    ScriptsFolder: Assets/Scripts/Game/Enemy
-    ClassName: Enemy
+    BindInfos:
+    - TypeName: SquirmealPup.Fish
+      PathToRoot: Fish
+      MemberName: Fish
+    - TypeName: SquirmealPup.Enemy
+      PathToRoot: SmallPenguin
+      MemberName: SmallPenguin
+    - TypeName: SquirmealPup.Star
+      PathToRoot: Star
+      MemberName: Star
+    ScriptsFolder: Assets/Scripts/Game
+    ClassName: CollectableGenerator
     Namespace: SquirmealPup
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquirmealPup\r\n{\r\n\tpublic
-      partial class Enemy : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class CollectableGenerator : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:61354348-6b5b-4c33-b95a-da2c6911a8c4\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquirmealPup\r\n{\r\n\tpublic partial class Enemy\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:1610a905-8cc6-4dd9-8ff6-1bc1acab3ce9\r\nusing UnityEngine;\r\n\r\nnamespace
+      SquirmealPup\r\n{\r\n\tpublic partial class CollectableGenerator\r\n\t{\r\n\r\n\t\tpublic
+      SquirmealPup.Fish Fish;\r\n\r\n\t\tpublic SquirmealPup.Enemy SmallPenguin;\r\n\r\n\t\tpublic
+      SquirmealPup.Star Star;\r\n\r\n\t}\r\n}\r\n"
